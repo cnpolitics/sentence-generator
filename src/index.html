@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta name="title" content="CNPolitics政见学术句型生成器v1.0｜句型生成器｜政见｜微信">
+	<meta name="description" content="CNPolitics政见学术句型生层v1.0｜句型生成器｜政见｜微信">
+    <meta http-equiv="Content-Type" content="text/html;" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">	
+	<meta charset="UTF-8">
+	
+    <title>政见学术句型生成器v1.0</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/jquery.mmenu.all.css" rel="stylesheet" />
+    <link href="css/background-style.css" rel="stylesheet" />
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.hammer.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+    <script type="text/javascript" src="js/generator.js"></script>
+    <script type="text/javascript" src="js/wechat.js"></script>
+    <script type="text/javascript" src="js/wxm-core.js"></script> 
+    
+</head>
+<body id="test1" class="test1">
+	<div class="wechat-thumb">
+		<img src="asserts/wechat-thumb.JPG" />
+	</div>
+	
+    <div id="content">
+        <div id="header_bar">
+        </div>
+        <!-- E header_bar -->
+	
+			
+        <div class="container">
+            <div id="header" class="text-center">
+				
+				 <div class="container">
+        <div class="text-center header">
+            <hr style="border:0;background-color:#cee6f7;height:4px;"  width="90%">
+            <h1 style="color:#000000; " class="bold">
+                政见学术句型生成器
+			</h1>
+            <hr style="border:0;background-color:#cee6f7;height:4px;" width="90%">  
+            </div>
+            
+            <!-- E header -->
+            <div id="bd" class="panel">
+                <div id="panel1" class="panel-body">
+                    <form action="#">
+
+                    <div style="position: relative; top: -35px;height:55px; color:#000000; background:#c8eefa;MARGIN-RIGHT: auto; MARGIN-LEFT: auto; width:50%;" > 
+                         <h2 style = "position:relative;top:50%;translateX(-50%);translateY(-50%)"> 测试说明 </h2>
+                    </div>
+                    
+                    <div >
+                        <label for="" class="sr-only">前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span class="icon1">
+                            <img src="asserts/box.png"></span> </a>
+                    </div>
+                    <p style="position: relative; top: -10px;">
+                    	Some description should be here
+                    </p>
+                    <div class="buttons" >
+                        <a href="#result" class="btn btn-lg btn-success" style="background:#c7edfa; width: 50%" onclick="return show();">
+                            <strong style="color:#404243;font-size: 22px;">自动生成</strong></a>
+                    </div>
+                    </form>
+           </div>
+                
+            <div id="panel3" class="panel-body js_result" data-id="10" style="display: none;">
+                <div>
+                        <a href="javascript:void(0)" name="1"><span class="icon3"><img src="asserts/box3.png"></span> </a>
+                </div>
+                <h1 class="bold">
+                     巴啦啦小魔仙赐予你的学术句型是：</h1>
+                <hr>
+                <dl>
+                    <dt id="rng"></dt>
+                    <dd>
+                        <p>点这里关注
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzI0MA==&mid=402752827&idx=1&sn=cf86a45ebeb368701d312d5273f940ba#rd">政见CNPolitics</a>
+                        </p>
+                    </dd>
+                </dl>
+                <button onclick="location.href=''" class="result-btn">
+                            再玩一次
+                </button>
+                <button href="javascript:void(0)"  onclick="$(&#39;#mcover&#39;).show()" class="result-btn">
+                            把结果分享到朋友圈
+                </button>
+                                <br>
+                <div id="copy">
+        			<p class="text-center">
+            			<a href="http://cnpolitics.org" style="color: #000; font-weight: bold;font-size: 15px;">&copy; 政见CNPolitics</a>
+        			</p>
+    			</div> 
+
+             </div>
+             <br>
+             
+                <div id="copy">
+        			<p class="text-center">
+            			<a href="http://cnpolitics.org" style="color: #000; font-weight: bold;font-size: 15px;">&copy; 政见CNPolitics</a>
+        			</p>
+    			</div> 
+            </div>
+    
+            <!-- E bd -->
+        </div>
+        <!-- E container -->
+<input type="hidden" name="totalsc" id="totalsc" value="0"  />
+
+</div>
+
+<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;"><img src="asserts/guide.png"></div>
+
+    <div id="pop_success" class="text-center" style="display: none;">
+        <div class="bd text-center">
+            <p style="line-height: 110px;">
+                分享成功</p>
+        </div>
+        <!-- E bd -->
+    </div>
+    
+    <!-- E copy -->
+    <div id="share_tips" class="sr-only">
+        <div class="container text-right">
+            点击右上角，分享给朋友/朋友圈 <i class="glyphicon glyphicon-hand-up element-animation"></i>
+        </div>
+        <!-- E container -->
+    </div>
+
+</body>
+</html>
+
+
+
