@@ -69,7 +69,7 @@ function read(f){
 	  				case "sentenceStructure":
 	  					sentenceStructure = lines[i];
 	  				default:
-	  					alert("Error happened");
+	  					alert(f + "    " + lines[i]);
 				}
         }}
     });
