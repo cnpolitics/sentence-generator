@@ -31,7 +31,7 @@ function generate(){
 	var cIndex = Math.floor(Math.random() * 35);
 	var dIndex = Math.floor(Math.random() * 34);
 	var sIndex = Math.floor(Math.random() * 8);
-	
+	result = sIndex;
 	str = sentenceStructure[sIndex];
 	str.replace("A",wordListA[aIndex]);
 	str.replace("B",wordListB[bIndex]);
