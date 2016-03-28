@@ -4,6 +4,7 @@ var wordListC = new Array();
 var wordListD = new Array();
 var sentenceStructure = new Array();
 var result;
+var dump = new Array();
 
 function show(){
 	initialize();
@@ -67,9 +68,11 @@ function read(f){
 	  					wordListD[i] = lines[i];
 	  					break;
 	  				case "sentenceStructure":
-	  					sentenceStructure = lines[i];
+	  					sentenceStructure[i] = lines[i];
+	  					break;
 	  				default:
-	  					alert(f + "    " + lines[i]);
+	  					dump[i] = lines[i];
+	  					break;
 				}
         }}
     });
