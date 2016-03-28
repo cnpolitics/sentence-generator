@@ -4,6 +4,7 @@ var wordListC = new Array();
 var wordListD = new Array();
 var sentenceStructure = new Array();
 var result;
+var str;
 var dump = new Array();
 
 function show(){
@@ -31,7 +32,7 @@ function generate(){
 	var dIndex = Math.floor(Math.random() * 34);
 	var sIndex = Math.floor(Math.random() * 8);
 	
-	var str = sentenceStructure[sIndex];
+	str = sentenceStructure[sIndex];
 	str.replace("A",wordListA[aIndex]);
 	str.replace("B",wordListB[bIndex]);
 	str.replace("C",wordListC[cIndex]);
