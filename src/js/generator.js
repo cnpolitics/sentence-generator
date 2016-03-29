@@ -30,14 +30,13 @@ function generate(){
 	var cIndex = Math.floor(Math.random() * 33);
 	var dIndex = Math.floor(Math.random() * 32);
 	var sIndex = Math.floor(Math.random() * 8); 
-	result = sIndex;
+	result = aIndex + " " + bIndex +" " + cIndex + " " + dIndex;
 	str = sentenceStructure[sIndex].toString();
-	str = str.replace("A",wordListA[aIndex]);
-	str = str.replace("B",wordListB[bIndex]);
-	str = str.replace("C",wordListC[cIndex]);
-	str = str.replace("D",wordListD[dIndex]);
+	str = str.replace(/A/g,wordListA[aIndex]);
+	str = str.replace(/B/g,wordListB[bIndex]);
+	str = str.replace(/C/g,wordListC[cIndex]);
+	str = str.replace(/D/g,wordListD[dIndex]);
 	document.getElementById("rng").innerHTML = str;
-	result = str;
 }
 
 
