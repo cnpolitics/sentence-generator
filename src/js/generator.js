@@ -32,10 +32,10 @@ function generate(){
 	var sIndex = Math.floor(Math.random() * 8); 
 	result = sIndex;
 	str = sentenceStructure[sIndex].toString();
-	str.replace("A",wordListA[aIndex]);
-	str.replace("B",wordListB[bIndex]);
-	str.replace("C",wordListC[cIndex]);
-	str.replace("D",wordListD[dIndex]);
+	str = str.replace("A",wordListA[aIndex]);
+	str = str.replace("B",wordListB[bIndex]);
+	str = str.replace("C",wordListC[cIndex]);
+	str = str.replace("D",wordListD[dIndex]);
 	document.getElementById("rng").innerHTML = str;
 	result = str;
 }
