@@ -6,6 +6,7 @@ var sentenceStructure = new Array();
 var result;
 var str;
 var dump = new Array();
+var count = 0;
 
 function show(){
 	initialize();
@@ -36,6 +37,7 @@ function generate(){
 	str = str.replace(/B/g,wordListB[bIndex]);
 	str = str.replace(/C/g,wordListC[cIndex]);
 	str = str.replace(/D/g,wordListD[dIndex]);
+	ste = str.replace(/undefined/g,"虚无主义");
 	document.getElementById("rng").innerHTML = str;
 }
 
@@ -75,9 +77,27 @@ function read(f){
 				}
         }
         
-        if (f == "sentenceStructure"){
-        	generate();
-        }
+			switch (f){
+	  				case "wordListA":
+	  					count++;
+	  					break;
+	  				case "wordListB":
+	  					count++;
+	  					break;
+	  				case "wordListC":
+	  					count++;
+	  					break;
+	  				case "wordListD":
+	  					count++;
+	  					break;
+	  				case "sentenceStructure":
+	  					count++;
+	  					break;
+	  				default:
+	  					dump[i] = lines[i];
+	  					break;
+				}
+				if (count == 5){generate();}
         }
     });
 }
