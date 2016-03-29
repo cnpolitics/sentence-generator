@@ -25,10 +25,10 @@ function initialize(){
 }
 
 function generate(){
-	var aIndex = Math.floor(Math.random() * 33);
-	var bIndex = Math.floor(Math.random() * 33);
-	var cIndex = Math.floor(Math.random() * 35);
-	var dIndex = Math.floor(Math.random() * 34);
+	var aIndex = Math.floor(Math.random() * 31);
+	var bIndex = Math.floor(Math.random() * 31);
+	var cIndex = Math.floor(Math.random() * 33);
+	var dIndex = Math.floor(Math.random() * 32);
 	var sIndex = Math.floor(Math.random() * 8); 
 	result = sIndex;
 	str = sentenceStructure[sIndex].toString();
