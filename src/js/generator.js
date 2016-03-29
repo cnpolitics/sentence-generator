@@ -29,7 +29,7 @@ function generate(){
 	var bIndex = Math.floor(Math.random() * 31);
 	var cIndex = Math.floor(Math.random() * 33);
 	var dIndex = Math.floor(Math.random() * 32);
-	var sIndex = Math.floor(Math.random() * 8); 
+	var sIndex = Math.floor(Math.random() * 7); 
 	result = aIndex + " " + bIndex +" " + cIndex + " " + dIndex;
 	str = sentenceStructure[sIndex].toString();
 	str = str.replace(/A/g,wordListA[aIndex]);
