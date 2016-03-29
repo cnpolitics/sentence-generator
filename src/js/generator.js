@@ -36,7 +36,7 @@ function generate(){
 	str.replace("B",wordListB[bIndex]);
 	str.replace("C",wordListC[cIndex]);
 	str.replace("D",wordListD[dIndex]);
-	$('#rng').val(str);
+	document.getElementById("rng").innerHTML = str;
 	result = str;
 }
 
