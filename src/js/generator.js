@@ -9,7 +9,6 @@ var dump = new Array();
 
 function show(){
 	initialize();
-	generate();
     $("div#bd > div.panel-body").hide();
     $("div.js_result").eq(0).show();
 	$("div.js_result").eq(0).find(".resultscore").eq(0).html($("#totalsc").val());
@@ -30,7 +29,7 @@ function generate(){
 	var bIndex = Math.floor(Math.random() * 33);
 	var cIndex = Math.floor(Math.random() * 35);
 	var dIndex = Math.floor(Math.random() * 34);
-	var sIndex = Math.floor(Math.random() * 8);
+	var sIndex = Math.floor(Math.random() * 8); 
 	result = sIndex;
 	str = sentenceStructure[sIndex].toString();
 	str.replace("A",wordListA[aIndex]);
@@ -75,7 +74,12 @@ function read(f){
 	  					dump[i] = lines[i];
 	  					break;
 				}
-        }}
+        }
+        
+        if (f == "sentenceStructure"){
+        	generate();
+        }
+        }
     });
 }
 
