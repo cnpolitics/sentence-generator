@@ -8,6 +8,46 @@ var str;
 var dump = new Array();
 var count = 0;
 
+function moveLeft(btn){ 
+	$(btn).removeAttr("onclick");
+	$(btn).removeClass('start-btn');
+	$(btn).addClass('move-left');
+	
+	setTimeout(function addBox(str){
+	var panel = document.getElementById("panel1");
+	var element = document.createElement("div");
+	var newContent = document.createTextNode("风格是"); 
+	element.appendChild(newContent);
+	panel.appendChild(element);
+	$(element).addClass('dialog-appear');
+	}, 2000); // Delay 3 seconds
+	
+	
+	setTimeout(function addBox(str){
+	var panel = document.getElementById("panel1");
+	var element = document.createElement("div");
+	var newContent = document.createTextNode("学术"); 
+	element.appendChild(newContent);
+	panel.appendChild(element);
+	$(element).addClass('dialog-appear-right');
+	$(element).addClass('left-blank')
+	}, 4000); // Delay 3 seconds
+	
+	setTimeout(function addBox(str){
+	var panel = document.getElementById("panel1");
+	var element = document.createElement("div");
+	var newContent = document.createTextNode("生活"); 
+	element.appendChild(newContent);
+	panel.appendChild(element);
+	$(element).addClass('dialog-appear-right');
+	}, 6000); // Delay 3 seconds
+
+	
+}
+
+
+
+
 function show(){
 	initialize();
     $("div#bd > div.panel-body").hide();
