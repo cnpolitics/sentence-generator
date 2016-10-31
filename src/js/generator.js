@@ -118,7 +118,7 @@ function generate(){
 	var cIndex = Math.floor(Math.random() * 33);
 	var dIndex = Math.floor(Math.random() * 32);
 	var sIndex = Math.floor(Math.random() * 7); 
-	result = aIndex + " " + bIndex +" " + cIndex + " " + dIndex;
+	result = aIndex + " " + bIndex +" " + cIndex + " " + dIndex + " "+ sIndex ;
 	str = sentenceStructure[sIndex].toString();
 	str = str.replace(/A/g,wordListA[aIndex]);
 	str = str.replace(/B/g,wordListB[bIndex]);
