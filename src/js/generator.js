@@ -99,8 +99,7 @@ function moreDialog(){
 	
 	setTimeout(function addBox(str){
 	var element = document.createElement("div");	
-	var text = generate();
-	var newContent = document.createTextNode(text); 
+	var newContent = document.createTextNode(str); 
 	element.appendChild(newContent);
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear');
