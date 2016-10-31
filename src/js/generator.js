@@ -13,8 +13,8 @@ function moveLeft(btn){
 	$(btn).removeClass('start-btn');
 	$(btn).addClass('move-left');
 	
+	var panel = document.getElementById("dg-panel");
 	setTimeout(function addBox(str){
-	var panel = document.getElementById("panel1");
 	var element = document.createElement("div");
 	var newContent = document.createTextNode("风格是"); 
 	element.appendChild(newContent);
@@ -24,28 +24,75 @@ function moveLeft(btn){
 	
 	
 	setTimeout(function addBox(str){
-	var panel = document.getElementById("panel1");
 	var element = document.createElement("div");
 	var newContent = document.createTextNode("学术"); 
 	element.appendChild(newContent);
+	element.id = "c0";
+	element.onclick = function() { // Note this is a function
+    	choose(0);
+  		};
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear-right');
-	$(element).addClass('left-blank')
+	$(element).addClass('left-blank');
 	}, 4000); // Delay 3 seconds
 	
 	setTimeout(function addBox(str){
-	var panel = document.getElementById("panel1");
 	var element = document.createElement("div");
 	var newContent = document.createTextNode("生活"); 
 	element.appendChild(newContent);
+	element.id = "c1";
+	element.onclick = function() { // Note this is a function
+    	choose(1);
+  		};
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear-right');
+	$(element).addClass('right-dialog');
 	}, 6000); // Delay 3 seconds
 
 	
 }
 
+function choose(i){
+	
+	var parent = document.getElementById("dg-panel");
 
+	if (i==0){
+		var child = document.getElementById("c1");
+		parent.removeChild(child);
+		var element = document.getElementById("c0");
+		$(element).removeClass('dialog-appear-right');
+		$(element).addClass('dialog-move-up');
+		moreDialog();
+	}else{
+		var child = document.getElementById("c0");
+		parent.removeChild(child);
+		var element = document.getElementById("c1");
+		$(element).removeClass('dialog-appear-right');
+		$(element).addClass('dialog-move-up2');
+		moreDialog();
+	}
+
+}
+
+function moreDialog(){
+	var panel = document.getElementById("dg-panel");
+	var element = document.createElement("div");
+	var newContent = document.createTextNode("风格是"); 
+	element.appendChild(newContent);
+	panel.appendChild(element);
+	$(element).addClass('dialog-appear');
+	
+	
+	setTimeout(function addBox(str){
+	var element = document.createElement("div");
+	initialize();
+	var text = generate();
+	var newContent = document.createTextNode(text); 
+	element.appendChild(newContent);
+	panel.appendChild(element);
+	$(element).addClass('dialog-appear');
+	}, 2000); // Delay 3 seconds
+}
 
 
 function show(){
@@ -79,6 +126,7 @@ function generate(){
 	str = str.replace(/D/g,wordListD[dIndex]);
 	ste = str.replace(/undefined/g,"虚无主义");
 	document.getElementById("rng").innerHTML = str;
+	return str;
 }
 
 
