@@ -56,8 +56,10 @@ function moveLeft(btn){
 
 function choose(i){
 	
+	
 	var parent = document.getElementById("dg-panel");
 
+	
 	if (i==0){
 		var child = document.getElementById("c1");
 		parent.removeChild(child);
@@ -65,13 +67,22 @@ function choose(i){
 		$(element).removeClass('dialog-appear-right');
 		$(element).addClass('dialog-move-up');
 		moreDialog();
-	}else{
+	}else if(i == 1){
 		var child = document.getElementById("c0");
 		parent.removeChild(child);
 		var element = document.getElementById("c1");
 		$(element).removeClass('dialog-appear-right');
 		$(element).addClass('dialog-move-up2');
 		moreDialog();
+	}else if (i ==2 ){
+		$(parent).hide();
+		var panel1 = document.getElementById("panel1");
+		$(panel1).hide();
+		var resultpanel = document.getElementById("panel3");
+		$(resultpanel).show();
+		
+	}else{
+	
 	}
 
 }
@@ -79,7 +90,7 @@ function choose(i){
 function moreDialog(){
 	var panel = document.getElementById("dg-panel");
 	var element = document.createElement("div");
-	var newContent = document.createTextNode("风格是"); 
+	var newContent = document.createTextNode("正在分析..."); 
 	element.appendChild(newContent);
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear');
@@ -93,7 +104,33 @@ function moreDialog(){
 	element.appendChild(newContent);
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear');
-	}, 2000); // Delay 3 seconds
+	}, 1500); // Delay 1.5 seconds
+	
+	setTimeout(function addBox(str){
+	var element = document.createElement("div");
+	var newContent = document.createTextNode("生成书签"); 
+	element.appendChild(newContent);
+	element.id = "c0";
+	element.onclick = function() { // Note this is a function
+    	choose(2);
+  		};
+	panel.appendChild(element);
+	$(element).addClass('dialog-appear-right');
+	$(element).addClass('left-blank');
+	}, 2500); // Delay 2 seconds
+	
+	setTimeout(function addBox(str){
+	var element = document.createElement("div");
+	var newContent = document.createTextNode("退出"); 
+	element.appendChild(newContent);
+	element.id = "c0";
+	element.onclick = function() { // Note this is a function
+    	choose(3);
+  		};
+	panel.appendChild(element);
+	$(element).addClass('dialog-appear-right');
+	$(element).addClass('right-dialog');
+	}, 3500); // Delay 3.5 seconds
 }
 
 

@@ -14,7 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/jquery.mmenu.all.css" rel="stylesheet" />
-    
+	
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.hammer.min.js"></script>
@@ -62,25 +62,21 @@
                         开始
                     </div>
            		</div>
-            <div id="panel3" class="panel-body js_result" data-id="10" style="display: none;">
-                <h1 class="bold">
-                     巴啦啦小魔仙赐予你的学术句型是：</h1>
-                <hr>
-                <dl>
-                    <dd id="rng">Something should be here</dd>
-                    <dd>
-                        <p>点这里关注
-                        <a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzI0MA==&mid=402752827&idx=1&sn=cf86a45ebeb368701d312d5273f940ba#rd">政见CNPolitics</a>
-                        </p>
-                    </dd>
-                </dl>
-                <button onclick="location.href=''" class="result-btn">
+            <div id="panel3" class = "rs-panel" style="display: none;">
+           		<img src="asserts/cnpolitics.png" alt="CNPolitics icon" id= "cp-icon2" >
+                <div id="rng" class = "rs">  </div>
+                <div id="usr" class = "rs">  --- user name </div>
+                <div class = "rs-btns">
+                	<button onclick="location.href=''" >
                             再玩一次
-                </button>
-                <button href="javascript:void(0)"  onclick="$(&#39;#mcover&#39;).show()" class="result-btn">
+                	</button>
+                	<button href="javascript:void(0)"  onclick="$(&#39;#mcover&#39;).show()" >
                             把结果分享到朋友圈
-                </button>
-                                <br>
+                	</button>
+                </div>
+                <div >
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzI0MA==&mid=402752827&idx=1&sn=cf86a45ebeb368701d312d5273f940ba#rd">政见<br />CNPolitics</a>
+                </div>
              </div>
              <br>
              
@@ -110,7 +106,8 @@
         </div>
         <!-- E container -->
     </div>
-
+		
+		
 </body>
 </html>
 
