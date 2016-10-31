@@ -5,6 +5,7 @@ var wordListD = new Array();
 var sentenceStructure = new Array();
 var result;
 var str;
+var temp;
 var dump = new Array();
 var count = 0;
 
@@ -119,7 +120,8 @@ function generate(){
 	var dIndex = Math.floor(Math.random() * 32);
 	var sIndex = Math.floor(Math.random() * 7); 
 	result = aIndex + " " + bIndex +" " + cIndex + " " + dIndex + " "+ sIndex ;
-	str = sentenceStructure[sIndex].toString();
+	temp = sentenceStructure[sIndex];
+	str = temp.toString();
 	str = str.replace(/A/g,wordListA[aIndex]);
 	str = str.replace(/B/g,wordListB[bIndex]);
 	str = str.replace(/C/g,wordListC[cIndex]);
