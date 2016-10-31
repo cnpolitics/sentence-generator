@@ -1,13 +1,23 @@
 var wordListA = new Array();
+var wordListA2 = new Array();
 var wordListB = new Array();
+var wordListB2 = new Array();
 var wordListC = new Array();
+var wordListC2 = new Array();
 var wordListD = new Array();
+var wordListD2 = new Array();
 var sentenceStructure = new Array();
+var sentenceStructure2 = new Array();
 var result;
+var result2;
 var str;
+var str2;
 var temp;
+var temp2;
 var dump = new Array();
+var dump2 = new Array();
 var count = 0;
+var count2 = 0;
 
 function moveLeft(btn){ 
 	$(btn).removeAttr("onclick");
@@ -15,6 +25,7 @@ function moveLeft(btn){
 	$(btn).addClass('move-left');
 	
 	initialize();
+	initialize2();
 	var panel = document.getElementById("dg-panel");
 	setTimeout(function addBox(lol){
 	var element = document.createElement("div");
@@ -49,7 +60,8 @@ function moveLeft(btn){
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear-right');
 	$(element).addClass('right-dialog');
-	}, 6000); // Delay 3 seconds
+	window.scrollTo(0,document.body.scrollHeight);
+	}, 4000); // Delay 3 seconds
 
 	
 }
@@ -82,7 +94,7 @@ function choose(i){
 		$(resultpanel).show();
 		
 	}else{
-	
+		window.close();
 	}
 
 }
@@ -95,8 +107,12 @@ function moreDialog(){
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear');
 	
-	if (str == undefined){
+	if (str == undefined && str2 == undefined){
 		str = "公民社会不断被内卷化的过程，容易导致一个悖论：它看似能帮助我们有效地理解表象，却无力回应情境主义视角提出的挑战。";
+	}else if (str == undefined){
+		str = str2
+	}else {
+		str2 = str
 	}
 	
 	setTimeout(function addBox(lol){
@@ -105,6 +121,7 @@ function moreDialog(){
 	element.appendChild(newContent);
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear');
+	window.scrollTo(0,document.body.scrollHeight);
 	}, 1500); // Delay 1.5 seconds
 	
 	setTimeout(function addBox(lol){
@@ -118,6 +135,7 @@ function moreDialog(){
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear-right');
 	$(element).addClass('left-blank');
+	window.scrollTo(0,document.body.scrollHeight);
 	}, 2500); // Delay 2 seconds
 	
 	setTimeout(function addBox(lol){
@@ -131,6 +149,7 @@ function moreDialog(){
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear-right');
 	$(element).addClass('right-dialog');
+	window.scrollTo(0,document.body.scrollHeight);
 	}, 3500); // Delay 3.5 seconds
 }
 
@@ -152,6 +171,14 @@ function initialize(){
 	read("sentenceStructure");
 }
 
+function initialize2(){
+	readTextFile("wordListA");
+	readTextFile("wordListB");
+	readTextFile("wordListC");
+	readTextFile("wordListD");
+	readTextFile("sentenceStructure");
+}
+
 function generate(){
 	var aIndex = Math.floor(Math.random() * 31);
 	var bIndex = Math.floor(Math.random() * 31);
@@ -166,8 +193,97 @@ function generate(){
 	str = str.replace(/C/g,wordListC[cIndex]);
 	str = str.replace(/D/g,wordListD[dIndex]);
 	str = str.replace(/undefined/g,"虚无主义");
+	
 	document.getElementById("rng").innerHTML = str;
 	return str;
+}
+
+function generate2(){
+	var aIndex = Math.floor(Math.random() * 31);
+	var bIndex = Math.floor(Math.random() * 31);
+	var cIndex = Math.floor(Math.random() * 33);
+	var dIndex = Math.floor(Math.random() * 32);
+	var sIndex = Math.floor(Math.random() * 7); 
+	result2 = aIndex + " " + bIndex +" " + cIndex + " " + dIndex + " "+ sIndex ;
+	temp2 = sentenceStructure2[sIndex];
+	str2 = temp2.toString();
+	str2 = str2.replace(/A/g,wordListA2[aIndex]);
+	str2 = str2.replace(/B/g,wordListB2[bIndex]);
+	str2 = str2.replace(/C/g,wordListC2[cIndex]);
+	str2 = str2.replace(/D/g,wordListD2[dIndex]);
+	str2 = str2.replace(/undefined/g,"虚无主义");
+	
+	document.getElementById("rng").innerHTML = str2;
+	return str2;
+}
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                dealLines(allText,file);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+function dealLines(t,f){
+	var lines = t.split('\n');
+        //create select
+        //iterate over lines of file and create a option element
+        for(var i=0;i<lines.length;i++) {
+            //create option
+            	switch (f){
+	  				case "wordListA":
+	  					wordListA2[i] = lines[i];
+	  					break;
+	  				case "wordListB":
+	  					wordListB2[i] = lines[i];
+	  					break;
+	  				case "wordListC":
+	  					wordListC2[i] = lines[i];
+	  					break;
+	  				case "wordListD":
+	  					wordListD2[i] = lines[i];
+	  					break;
+	  				case "sentenceStructure":
+	  					sentenceStructure2[i] = lines[i];
+	  					break;
+	  				default:
+	  					dump2[i] = lines[i];
+	  					break;
+				}
+        }
+        
+			switch (f){
+	  				case "wordListA":
+	  					count2++;
+	  					break;
+	  				case "wordListB":
+	  					count2++;
+	  					break;
+	  				case "wordListC":
+	  					count2++;
+	  					break;
+	  				case "wordListD":
+	  					count2++;
+	  					break;
+	  				case "sentenceStructure":
+	  					count2++;
+	  					break;
+	  				default:
+	  					dump2[i] = lines[i];
+	  					break;
+				}
+				if (count2 == 5){generate2();}
 }
 
 
@@ -175,7 +291,7 @@ function read(f){
 	
     $.ajax({
     	url: f,
-        type: "POST",
+        type: "GET",
         dataType: "text",
         success: function(data){
         //split on new lines
