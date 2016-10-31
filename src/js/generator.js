@@ -14,6 +14,7 @@ function moveLeft(btn){
 	$(btn).removeClass('start-btn');
 	$(btn).addClass('move-left');
 	
+	initialize();
 	var panel = document.getElementById("dg-panel");
 	setTimeout(function addBox(str){
 	var element = document.createElement("div");
@@ -84,9 +85,9 @@ function moreDialog(){
 	$(element).addClass('dialog-appear');
 	
 	
+	
 	setTimeout(function addBox(str){
-	var element = document.createElement("div");
-	initialize();
+	var element = document.createElement("div");	
 	var text = generate();
 	var newContent = document.createTextNode(text); 
 	element.appendChild(newContent);
