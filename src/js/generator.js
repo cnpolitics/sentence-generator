@@ -95,8 +95,8 @@ function moreDialog(){
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear');
 	
-	while (str == undefined){
-		str = generate();
+	if (str == undefined){
+		str = "公民社会不断被内卷化的过程，容易导致一个悖论：它看似能帮助我们有效地理解表象，却无力回应情境主义视角提出的挑战。";
 	}
 	
 	setTimeout(function addBox(lol){
