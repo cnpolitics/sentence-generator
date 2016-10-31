@@ -16,7 +16,7 @@ function moveLeft(btn){
 	
 	initialize();
 	var panel = document.getElementById("dg-panel");
-	setTimeout(function addBox(str){
+	setTimeout(function addBox(lol){
 	var element = document.createElement("div");
 	var newContent = document.createTextNode("风格是"); 
 	element.appendChild(newContent);
@@ -25,7 +25,7 @@ function moveLeft(btn){
 	}, 2000); // Delay 3 seconds
 	
 	
-	setTimeout(function addBox(str){
+	setTimeout(function addBox(lol){
 	var element = document.createElement("div");
 	var newContent = document.createTextNode("学术"); 
 	element.appendChild(newContent);
@@ -38,7 +38,7 @@ function moveLeft(btn){
 	$(element).addClass('left-blank');
 	}, 4000); // Delay 3 seconds
 	
-	setTimeout(function addBox(str){
+	setTimeout(function addBox(lol){
 	var element = document.createElement("div");
 	var newContent = document.createTextNode("生活"); 
 	element.appendChild(newContent);
@@ -95,9 +95,11 @@ function moreDialog(){
 	panel.appendChild(element);
 	$(element).addClass('dialog-appear');
 	
+	while (str == undefined){
+		str = generate();
+	}
 	
-	
-	setTimeout(function addBox(str){
+	setTimeout(function addBox(lol){
 	var element = document.createElement("div");	
 	var newContent = document.createTextNode(str); 
 	element.appendChild(newContent);
@@ -105,7 +107,7 @@ function moreDialog(){
 	$(element).addClass('dialog-appear');
 	}, 1500); // Delay 1.5 seconds
 	
-	setTimeout(function addBox(str){
+	setTimeout(function addBox(lol){
 	var element = document.createElement("div");
 	var newContent = document.createTextNode("生成书签"); 
 	element.appendChild(newContent);
@@ -118,7 +120,7 @@ function moreDialog(){
 	$(element).addClass('left-blank');
 	}, 2500); // Delay 2 seconds
 	
-	setTimeout(function addBox(str){
+	setTimeout(function addBox(lol){
 	var element = document.createElement("div");
 	var newContent = document.createTextNode("退出"); 
 	element.appendChild(newContent);
@@ -163,7 +165,7 @@ function generate(){
 	str = str.replace(/B/g,wordListB[bIndex]);
 	str = str.replace(/C/g,wordListC[cIndex]);
 	str = str.replace(/D/g,wordListD[dIndex]);
-	ste = str.replace(/undefined/g,"虚无主义");
+	str = str.replace(/undefined/g,"虚无主义");
 	document.getElementById("rng").innerHTML = str;
 	return str;
 }
